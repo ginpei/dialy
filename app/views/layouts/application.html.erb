@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dialy</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="<%= "#{params[:controller]}_#{params[:action]}" %>">
+
+<%= yield %>
+
+</body>
+</html>

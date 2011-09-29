@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  body: MyText
+  cash: 1
+  suica: 1
+
+two:
+  body: MyText
+  cash: 1
+  suica: 1
