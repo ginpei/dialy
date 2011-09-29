@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    @pages = Page.order("date desc").all
 
     respond_to do |format|
       format.html # index.html.erb
