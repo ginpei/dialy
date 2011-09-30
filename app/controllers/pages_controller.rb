@@ -26,6 +26,7 @@ class PagesController < ApplicationController
   # GET /pages/new.json
   def new
     @page = Page.new
+    @yesterday = Page.get_yesterday
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +37,7 @@ class PagesController < ApplicationController
   # GET /pages/1/edit
   def edit
     @page = Page.find(params[:id])
+    @yesterday = Page.get_yesterday(@page)
   end
 
   # POST /pages

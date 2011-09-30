@@ -11,17 +11,13 @@
 <p>
   <b>Cash:</b>
   <%= number_with_delimiter @page.cash %>
-  <% if @page.cash && @yesterday && @yesterday.cash %>
-    (<%= number_with_delimiter @page.cash - @yesterday.cash %>)
-  <% end %>
+  <%= @page.get_diff_text(:cash, @yesterday) %>
 </p>
 
 <p>
   <b>Suica:</b>
   <%= number_with_delimiter @page.suica %>
-  <% if @page.suica && @yesterday && @yesterday.suica != nil %>
-    (<%= number_with_delimiter @page.suica - @yesterday.suica %>)
-  <% end %>
+  <%= @page.get_diff_text(:suica, @yesterday) %>
 </p>
 
 
