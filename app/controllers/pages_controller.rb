@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.order("date desc").all
+    @pages = Page.get_for_index
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def show
     @page = Page.find(params[:id])
-    @yesterday = Page.where(:date => @page.date-1).first
+    @yesterday = Page.get_yesterday(@page)
 
     respond_to do |format|
       format.html # show.html.erb
