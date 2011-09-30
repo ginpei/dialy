@@ -2,11 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#pages_new #page_body,
 #pages_edit #page_body {
   font-family: Georgia, "Bitstream Charter", serif;
   font-size: 1.5em;
   height: 15em;
-  width: 100%;
+  width: 90%;
 }
 
 #pages_show #page_body {
