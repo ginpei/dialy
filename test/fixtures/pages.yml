@@ -1,19 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
 one:
-  id: 1
-  date: 2000-10-01
   body: MyText
-  cash: 2200
-  suica: 500
+  cash: 1
+  suica: 1
 
 two:
-  id: 2
-  date: 2000-10-02
-  cash: 1000
-  suica: 100
-
-three:
-  id: 3
-  cash: 1300
-  suica: 100
+  body: MyText
+  cash: 1
+  suica: 1
