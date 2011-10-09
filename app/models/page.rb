@@ -11,7 +11,7 @@ class Page < ActiveRecord::Base
     else
       today_date = today.date
     end
-    Page.where(:date => today_date-1).first
+    Page.where(:date => today_date.yesterday).first
   end
 
   def get_diff(key, yesterday)
@@ -20,7 +20,11 @@ class Page < ActiveRecord::Base
 
   def get_diff_text(key, yesterday)
     if self[key] && yesterday && yesterday[key]
-      "(" + number_with_delimiter(get_diff(key, yesterday)) + ")"
+      diff = get_diff key, yesterday
+      "(" +
+        (diff > 0 ? "+" : "") +
+        number_with_delimiter(diff) +
+        ")"
     else
       ""
     end

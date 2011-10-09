@@ -22,12 +22,16 @@
   <div class="field">
     <%= f.label :cash %><br />
     <%= f.number_field :cash %>
-    (<%= @yesterday.date %>: <%= number_with_delimiter @yesterday.cash %>)
+    <% if @yesterday %>
+      (<%= @yesterday.date %>: <%= number_with_delimiter @yesterday.cash %>)
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :suica %><br />
     <%= f.number_field :suica %>
-    (<%= @yesterday.date %>: <%= number_with_delimiter @yesterday.suica %>)
+    <% if @yesterday %>
+      (<%= @yesterday.date %>: <%= number_with_delimiter @yesterday.suica %>)
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

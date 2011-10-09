@@ -83,4 +83,19 @@ class PagesController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def date
+    @page = Page
+      .select([:id, :cash, :suica])
+      .where(:date => [
+        params[:year],
+        params[:month],
+        params[:date]
+      ].join("-"))
+      .first
+
+    respond_to do |format|
+      format.json
+    end
+  end
 end
