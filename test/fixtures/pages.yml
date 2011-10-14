@@ -1,6 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
 one:
+  events: |
+    hoge
+
+    fuga
   body: MyText
   cash: 1
   suica: 1

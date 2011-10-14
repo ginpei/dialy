@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#pages_new #page_events,
+#pages_edit #page_events {
+  height: 10em;
+}
 #pages_new #page_body,
 #pages_edit #page_body {
   font-family: Georgia, "Bitstream Charter", serif;

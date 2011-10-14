@@ -29,4 +29,14 @@ class Page < ActiveRecord::Base
       ""
     end
   end
+
+  def events_array
+    if self.events.nil?
+      []
+    else
+      list = self.events.split("\n")
+      list.delete("")
+      list
+    end
+  end
 end

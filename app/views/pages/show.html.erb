@@ -2,9 +2,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Events:</b>
+  <ul id="page_events">
+    <% if @page.events_array.nil? or @page.events_array.size < 1 %>
+      <li>（なし）</li>
+    <% else %>
+      <% @page.events_array.each do |event| %>
+        <li><%= event %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</p>
+
+<p>
   <b>Body:</b>
   <div id="page_body">
-    <%=simple_format @page.body %>
+    <%= simple_format @page.body %>
   </div>
 </p>
 
