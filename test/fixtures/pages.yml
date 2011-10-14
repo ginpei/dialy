@@ -5,11 +5,19 @@ one:
     hoge
 
     fuga
+  id: 1
+  date: 2000-10-01
   body: MyText
-  cash: 1
-  suica: 1
+  cash: 2200
+  suica: 500
 
 two:
-  body: MyText
-  cash: 1
-  suica: 1
+  id: 2
+  date: 2000-10-02
+  cash: 1000
+  suica: 100
+
+three:
+  id: 3
+  cash: 1300
+  suica: 100
