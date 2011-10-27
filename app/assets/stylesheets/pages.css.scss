@@ -17,6 +17,24 @@
   background-color: #eff;
   color: #39c;
 }
+.date h3 {
+  display: inline;
+  font-size: normal;
+  margin-right: 1em;
+}
+.date .money {
+  margin-right: 1em;
+}
+.date ul {
+  color: #999;
+  margin-top: 0;
+}
+.date .controllers {
+  opacity: .3;
+}
+.date:hover .controllers {
+  opacity: 1;
+}
 
 #pages_new #page_events,
 #pages_edit #page_events {

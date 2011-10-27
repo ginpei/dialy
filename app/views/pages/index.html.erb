@@ -2,24 +2,24 @@
 
 <p><%= link_to 'New Page', new_page_path, :id => "new_page_link" %></p>
 
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Cash</th>
-    <th>Suica</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @pages.each do |page| %>
-  <tr>
-    <td><%= link_to page.date, page %></td>
-    <td><%= number_with_delimiter page.cash %></td>
-    <td><%= number_with_delimiter page.suica %></td>
-    <td><%= link_to 'Show', page %></td>
-    <td><%= link_to 'Edit', edit_page_path(page) %></td>
-    <td><%= link_to 'Destroy', page, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div class="date">
+    <div>
+      <h3><%= link_to page.date, page %></h3>
+      <span class="money">Cash: <%= number_with_delimiter page.cash %></span>
+      <span class="money">Suica: <%= number_with_delimiter page.suica %></span>
+      <span class="controllers">
+        <%= link_to 'Show', page %>
+        <%= link_to 'Edit', edit_page_path(page) %>
+        <%= link_to 'Destroy', page, confirm: 'Are you sure?', method: :delete %>
+      </span>
+    </div>
+    <% unless page.events_array.nil? or page.events_array.size < 1 %>
+      <ul>
+        <% page.events_array.each do |event| %>
+          <li><%= event %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
 <% end %>
-</table>
