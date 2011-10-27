@@ -1,5 +1,7 @@
 <h1>Listing pages</h1>
 
+<p><%= link_to 'New Page', new_page_path, :id => "new_page_link" %></p>
+
 <table>
   <tr>
     <th>Date</th>
@@ -13,15 +15,11 @@
 <% @pages.each do |page| %>
   <tr>
     <td><%= link_to page.date, page %></td>
-    <td><%=number_with_delimiter page.cash %></td>
-    <td><%=number_with_delimiter page.suica %></td>
+    <td><%= number_with_delimiter page.cash %></td>
+    <td><%= number_with_delimiter page.suica %></td>
     <td><%= link_to 'Show', page %></td>
     <td><%= link_to 'Edit', edit_page_path(page) %></td>
     <td><%= link_to 'Destroy', page, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Page', new_page_path %>

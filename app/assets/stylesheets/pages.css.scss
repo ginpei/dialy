@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#new_page_link {
+  background-color: #eef;
+  border: solid 1px #999;
+  border-radius: 3px;
+  box-shadow:
+    1px 1px 1px #fff inset,
+    -1px -1px 1px #999 inset;
+  color: #339;
+  padding: 4px 10px;
+  text-decoration: none;
+}
+#new_page_link:hover {
+  background-color: #eff;
+  color: #39c;
+}
+
 #pages_new #page_events,
 #pages_edit #page_events {
   height: 10em;
