@@ -11,7 +11,7 @@ Dialy::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
-  match ':year/:month/:date' => 'pages#date'
+  match ':year-:month-:date' => 'pages#date'
 
   # Samples#index"
   root :to => "pages#index"

@@ -26,7 +26,6 @@ class PagesController < ApplicationController
   # GET /pages/new.json
   def new
     @page = Page.new
-    @yesterday = Page.get_yesterday
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,7 +36,6 @@ class PagesController < ApplicationController
   # GET /pages/1/edit
   def edit
     @page = Page.find(params[:id])
-    @yesterday = Page.get_yesterday(@page)
   end
 
   # POST /pages
@@ -84,18 +82,20 @@ class PagesController < ApplicationController
     end
   end
 
+  # GET /pages/:year-:month-:date
   def date
     @page = Page
-      .select([:id, :cash, :suica])
       .where(:date => [
         params[:year],
-        params[:month],
-        params[:date]
+        ("0" + params[:month])[-2..-1],
+        ("0" + params[:date])[-2..-1]
       ].join("-"))
       .first
 
-    respond_to do |format|
-      format.json
+    if @page
+      render :json => @page
+    else
+      render :json => {:error => "no data"}
     end
   end
 end

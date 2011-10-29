@@ -6,8 +6,8 @@
   <div class="date">
     <div>
       <h3><%= link_to page.date, page %></h3>
-      <span class="money">Cash: <%= number_with_delimiter page.cash %></span>
-      <span class="money">Suica: <%= number_with_delimiter page.suica %></span>
+      <span class="money">Cash: <%= number_with_delimiter page.cash or "-" %></span>
+      <span class="money">Suica: <%= number_with_delimiter page.suica or "-" %></span>
       <span class="controllers">
         <%= link_to 'Show', page %>
         <%= link_to 'Edit', edit_page_path(page) %>
