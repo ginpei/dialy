@@ -9,6 +9,7 @@ initEdit = ->
       $.getJSON('/dialy/' + getSelectedDate(), (data, status, xhr) ->
         updateDate data
       )
+    .change()
   $('#yesterday-cash, #yesterday-suica')
     .click (event) ->
       num = Number ($(this).text().match(/\ (\d+)\)$/) || [])[1]
